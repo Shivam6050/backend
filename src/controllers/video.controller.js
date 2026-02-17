@@ -136,7 +136,7 @@ const getVideoById = asyncHandler(async (req, res) => {
     
     
     // Validate ObjectId
-    if (!isValidObjectId(videoId)) {
+    if (!mongoose.isValidObjectId(videoId)) {
         throw new ApiError(400, "Invalid video id");
     }
 
@@ -158,7 +158,7 @@ const updateVideo = asyncHandler(async (req, res) => {
     const { videoId } = req.params
     //TODO: update video details like title, description, thumbnail
     // validate videoId
-    if (!isValidObjectId(videoId)) {
+    if (!mongoose.isValidObjectId(videoId)) {
         throw new ApiError(400, "Invalid video id");
     }
 
